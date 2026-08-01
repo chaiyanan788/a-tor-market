@@ -20,6 +20,42 @@
       <button class="adm-nav-item active" data-admpage="overview">📊 ภาพรวม</button>
       <button class="adm-nav-item" data-admpage="listings">🎫 ประกาศทั้งหมด</button>
       <button class="adm-nav-item" data-admpage="users">👤 สมาชิก</button>
+      <button class="adm-nav-item" data-admpage="payouts">💰 จ่ายเงินผู้ขาย</button>
+      <button class="adm-nav-item" data-admpage="messages">💬 ข้อความ</button>
+    </div>
+    <div class="adm-nav-bottom">
+      <button class="adm-nav-item" id="admLogoutBtn">↩ ออกจากระบบแอดมิน</button>
+      <button class="adm-nav-item" id="admBackBtn">← กลับหน้าเว็บหลัก</button>
+    </div>
+  </aside>
+  <main class="adm-main" id="admMainRoot"></main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ตั๋วต่อ — แผงควบคุมแอดมิน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="adm-gate" id="admGateRoot"></div>
+
+<div class="adm-app" id="admAppRoot" style="display:none;">
+  <aside class="adm-sidebar">
+    <div class="adm-brand"><div class="mark" style="width:32px;height:32px;font-size:16px;">T</div><div class="name" style="font-size:16.5px;">ตั๋ว<span>ต่อ</span></div></div>
+    <div class="adm-tag">ADMIN PANEL</div>
+    <div class="adm-nav-list">
+      <button class="adm-nav-item active" data-admpage="overview">📊 ภาพรวม</button>
+      <button class="adm-nav-item" data-admpage="listings">🎫 ประกาศทั้งหมด</button>
+      <button class="adm-nav-item" data-admpage="users">👤 สมาชิก</button>
       <button class="adm-nav-item" data-admpage="messages">💬 ข้อความ</button>
     </div>
     <div class="adm-nav-bottom">
