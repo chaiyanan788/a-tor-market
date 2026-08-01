@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ตั๋วต่อ — ตลาดกลางซื้อ-ขายบัตรคอนเสิร์ต</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="siteRoot">
+<header class="site">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="mark">T</div>
+      <div class="name">ตั๋ว<span>ต่อ</span></div>
+    </div>
+    <div class="header-actions" id="headerActions"></div>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<section class="hero">
+  <div>
+    <h1>ซื้อ-ขายบัตรคอนเสิร์ต<br>ผ่าน<span class="hl">ตัวกลาง</span>ที่ไว้ใจได้</h1>
+    <p>ลงประกาศขายบัตรที่เหลือ หรือตามหาบัตรที่ใช่ กับตลาดกลางสำหรับคนรักคอนเสิร์ตและอีเวนต์ ไม่มีค่าธรรมเนียมแอบแฝง ติดต่อผู้ขายโดยตรง</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary btn-lg" id="ctaPost">＋ ลงประกาศขายบัตร</button>
+      <button class="btn btn-ghost btn-lg" id="ctaBrowse">ดูบัตรทั้งหมด</button>
+    </div>
+    <div class="trust-row">
+      <span>✓ ต้องสมัครสมาชิกก่อนลงประกาศ</span>
+      <span>✓ ไม่มีค่าธรรมเนียมแอบแฝง</span>
+      <span>✓ มีคำแนะนำความปลอดภัยทุกการซื้อขาย</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-ticket">
+      <div class="main">
+        <div class="eyebrow">GENERAL ADMISSION</div>
+        <h3>LIVE ON STAGE</h3>
+        <div class="meta">Impact Arena · 20:00</div>
+      </div>
+      <div class="stub"><span>ADMIT ONE</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap how-it-works">
+  <div class="section-head">
+    <h2>วิธีใช้งาน</h2>
+    <div class="sub">ปลอดภัย โปร่งใส ใน 3 ขั้นตอน</div>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>สมัครสมาชิก</h3>
+      <p>ตั้งชื่อผู้ใช้และ PIN เพื่อยืนยันตัวตนก่อนลงประกาศหรือติดต่อผู้ขาย ทุกประกาศจึงมีที่มาตรวจสอบได้</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>ลงประกาศ หรือค้นหาบัตร</h3>
+      <p>กรอกรายละเอียดบัตรให้ครบถ้วน หรือค้นหาบัตรที่ต้องการจากรายการประกาศทั้งหมด พร้อมเปรียบเทียบราคา</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>นัดรับ-ส่งอย่างปลอดภัย</h3>
+      <p>ติดต่อผู้ขายโดยตรงผ่านช่องทางที่แจ้งไว้ ตรวจสอบตัวตนและนัดรับ-โอนเงินในที่ปลอดภัยหรือแบบเห็นหน้า</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="browseSection">
+  <div class="section-head">
+    <h2>บัตรที่ประกาศขาย</h2>
+    <div class="sub" id="listingCount">กำลังโหลด...</div>
+  </div>
+  <div class="toolbar">
+    <input type="text" id="searchInput" placeholder="ค้นหาชื่องาน, สถานที่...">
+    <select id="sortSelect">
+      <option value="new">ล่าสุด</option>
+      <option value="dateAsc">วันที่จัดงาน (ใกล้ก่อน)</option>
+      <option value="priceAsc">ราคาต่ำ-สูง</option>
+      <option value="priceDesc">ราคาสูง-ต่ำ</option>
+    </select>
+  </div>
+  <div class="grid" id="listingGrid"></div>
+</section>
+
+<section class="wrap" id="mySection" style="display:none;">
+  <div class="section-head">
+    <h2>ประกาศของฉัน</h2>
+  </div>
+  <div class="grid" id="myGrid"></div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-brand">ตั๋ว<span>ต่อ</span></div>
+      <p>ตลาดกลางซื้อ-ขายบัตรคอนเสิร์ตและอีเวนต์ สำหรับคนรักดนตรีที่ต้องการพื้นที่ซื้อขายที่โปร่งใสและตรวจสอบได้</p>
+    </div>
+    <div class="footer-col">
+      <h4>ข้อควรระวังก่อนซื้อ-ขาย</h4>
+      <ul>
+        <li>ตรวจสอบชื่อผู้ขาย/ผู้ซื้อและประวัติการสมัครสมาชิกก่อนทุกครั้ง</li>
+        <li>นัดรับ-ส่งบัตรในที่ปลอดภัยหรือแบบเห็นหน้า หลีกเลี่ยงการโอนเงินก่อนรับบัตร</li>
+        <li>ขอดูหลักฐานบัตร/e-ticket จริงก่อนตัดสินใจโอนเงิน</li>
+        <li>หากพบพฤติกรรมน่าสงสัย ควรหยุดทำรายการทันที</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 ตั๋วต่อ · เว็บไซต์นี้เป็นเพียงพื้นที่กลางให้ผู้ซื้อ-ผู้ขายติดต่อกันเอง ไม่มีส่วนเกี่ยวข้องกับการชำระเงินหรือรับประกันความถูกต้องของประกาศ · <a href="/admin" style="color:var(--muted); text-decoration:underline;">Admin</a></div>
+</footer>
+</div>
+
+<div id="modalRoot"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
